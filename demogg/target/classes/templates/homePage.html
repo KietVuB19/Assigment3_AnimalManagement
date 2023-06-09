@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Home page</title>
+	</head>
+	<body>
+		<div align ="center">
+			<a th:href ="@{/saveAnimal}">Add Animal</a>
+			<table border="1">
+				<thead>
+					<tr>
+						<td>Id</td>
+						<td>Name</td>
+						<td>Price</td>
+						<td>Habitat</td>
+						<td>Action</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each = "animal : ${listAnimal}">
+						<td th:text ="${animal.id}"></td>
+						<td th:text ="${animal.Name}"></td>
+						<td th:text ="${animal.Price}"></td>
+						<td th:text ="${animal.Habitat}"></td>
+						<td>
+							<a th:href ="@{/updateAnimal/{id}(id=${animal.id})}">Update</a>
+							
+							<a th:href="@{deleteAnimal/{id}(id=${animal.id})}">Delete</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</body>
+</html>

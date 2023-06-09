@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Add page</title>
+	</head>
+	<body>
+		<div align ="center">
+			<form th:action="@{/addAnimal}" th:object="${animal}" method="post">
+				<input type="hidden" th:field="*{id}" />
+				<input type="text" th:field="*{Name}" placeholder="Enter name">
+				<input type="text" th:field="*{Price}" placeholder="Enter Price">
+				<input type="text" th:field="*{Habitat}" placeholder="Enter Habitat">
+				<button type="submit">Add New</button>
+			</form>
+		</div>
+	</body>
+</html>
